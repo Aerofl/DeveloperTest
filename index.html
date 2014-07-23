@@ -1,0 +1,45 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>  
+	<meta charset="utf-8">  
+	<title>DeveloperTest Registration Form</title>  
+	<link href="css/stylesheets.css" media="screen" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+  	<script src="https://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+  	<script src="js/ageCalc.js"></script>
+  	<script src="js/database.js"></script>
+</head>  
+<p class="required">
+  Optimized with Chrome for SQL Database Access
+    <body onload="init();">
+
+	<div class="wrapper">
+		<div style="text-align:center;">
+			<h1>Registration Form</h1>  
+			<p style="margin-bottom:25px;">Use tab keys to move from one input field to the next.</p>  
+			<form type="post" onsubmit="addLastName(); return false;"> 
+				<!-- FirstName, MiddleName, LastName, BirthDate, EmailAddress, and Age -->
+				<p>First Name</p>
+				<input type="text" id="firstName" name="firstName" />
+				<p>Middle Name</p>				
+				<input type="text" id="middleName" name="middleName" />
+				<p>Last Name *</p>
+				<input type="text" id="lastName" name="lastName" required/>
+				<p>Email (Valid required)</p>
+				<input type="email" id="email" name="email" />
+				<p>Birthdate *</p>
+		        <input type="text" id="birth" name="birth" id="birth" onblur="ageCount()" required/>
+		        <p style="text-align:right">* Required fields</p>
+				<p style="margin-left:100px;">Your Calculated Age</p><input type="number" name="age" id="ageId" disabled/>
+				<input type="submit" value="Submit" /> 
+				<input type="text" id="where" name="where" placeholder="Enter a last name" />
+				<input type="button" id="show-me" value="Display" />
+				<ul id="persons-list"></ul>
+			</form>
+				<ul id="lastNameItems"></ul>
+		</div>
+	</div>
+</body>  
+</html>
